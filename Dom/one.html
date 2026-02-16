@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+  height: 500px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-card {
+  width: 100px;
+  height: 100px;
+  margin-top: 50%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.captain {
+  color: white;
+  text-align: center;
+  padding: 8px;
+}
+.keeper {
+  text-align: center;
+  padding: 10px;
+}
+button{
+    width: 60px;
+    height: 30px;
+    
+}
+
+</style>
+<body>
+  <div class="form">
+    <label>Captain Name</label>
+    <br>
+    <input type="text" id="captain">
+    <br>
+    <br>
+    <label>Wicket Keeper Name</label>
+    <br>
+    <input type="text" id="keeper">
+    <br>
+    <br>
+    <button onclick="createCard()">Submit</button>
+  </div>
+  <div id="card-container"></div>
+  <script src="./one.js"></script>
+</body>
+</html>

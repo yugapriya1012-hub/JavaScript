@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- option 1 -->
+
+    <!-- <form id="myForm" novalidate>
+        <input type="text" id="username" required><br>
+        <span id="usernameError"></span><br>
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- option 2 -->
+    <!-- <form id="myForm"  novalidate>
+        <input type="email" id="email" required>
+        <span id="emailError"></span>
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- option 3 -->
+     <form id="signupForm" novalidate>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required minlength="8">
+        <span id="confirmPasswordError"></span>
+        <button type="submit">Sign up</button>
+     </form>
+</body>
+    <!-- option 1 -->
+
+    <!-- <script>
+        const form = document.getElementById("myForm");
+        const username = document.getElementById("username");
+        const usernameError = document.getElementById("usernameError");
+
+        form.addEventListener("submit", function(event) {
+            if (!username.checkValidity()) {
+            usernameError.textContent = "Username is required!";
+            event.preventDefault();
+            }
+        });
+    </script> -->
+
+    <!-- option 2
+    <script>
+        const form=document.getElementById("myForm");
+        const email=document.getElementById("email");
+        const emailError=document.getElementById("emailError");
+        form.addEventListener("submit",function(event){
+            if(!email.validity.valid){
+                if(email.validity.valueMissing){
+                    emailError.textContent="Email is required!";
+                }else if(email.validity.typeMismatch){
+                    emailError.textContent="Please enter a valid email address"
+                }
+                event.preventDefault();
+            }
+        });
+
+    </script> -->
+
+    <script>
+        const form=document.getElementbyId()
+    </script>
+</html>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #primary{
+            background-color: cornflowerblue;
+            color:white;
+            padding:10px;
+            border: 1px solid white;
+            border-radius:8px;
+            width:100px;
+        }
+        #box1{
+            width: 300px;
+            height:150px;
+            border-radius: 8px;
+            border:2px solid green; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+               }
+    </style>
+</head>
+<body>
+    <!-- input -->
+    <!-- <label>Name:</label> -->
+    <input type="text" id="name" placeholder="Enter your name" />
+    <br/>
+    <br/>
+    <!-- button -->
+    <!-- <label>Button:</label> -->
+    <button id="primary">Click</button>
+     <br/>
+    </br>
+   
+    <!-- box -->
+    <div id="box1"></div>
+   
+</body>
+<script>
+    console.log("hello world");
+//declaring one variable
+    var InputBox=document.getElementById("name")
+    console.log(InputBox);
+
+    var myButton=document.getElementById("primary")
+    console.log(myButton);
+
+    var output=document.getElementById("myBox")
+     
+//In console it show button is clicked
+    myButton.addEventListener("click",()=>{
+        console.log("Button is clicked")
+
+    });
+
+//count the words using split
+    myButton.addEventListener("click", () => {
+    let text = InputBox.value
+    let words = text.split(" ")
+    let count = words.length
+    box1.innerHTML =  count
+  })
+    
+
+</script>
+</html>

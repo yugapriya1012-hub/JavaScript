@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            margin:0;
+            background-color:rgb(157,129,157) ;
+        }
+        form{
+            border:2px solid black;
+            padding:20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+
+        <h1>Login page</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <br><br>
+
+        <label for="confirmPassword">ConfirmPassword</label>
+        <input type="password" id="confirmPassword">
+        <br><br>
+
+       
+        <input type="submit" value="Login">
+    </form>
+</body>c
+<script>
+    const form=document.getElementById("form")
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+
+        const username=document.getElementById("username").value;
+        const password=document.getElementById("password").value;
+        const confirmPassword=document.getElementById("confirmPassword").value;
+
+        if(username === "" || password === "" || confirmPassword == ""){
+            alert("Please fill all fields");
+            return 
+        }
+        
+        if(password!==confirmPassword){
+            alert("Password do not match");
+            return
+        }
+
+        localStorage.setItem("LoggedIn","true");
+        // localStorage.setItem("isLoggedIn","true")
+
+        window.location.href="home.html"
+
+    });
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="name">
+            <h1 id="finalResult">0</h1>
+        </div>
+        <label>First number: </label>
+        <input type="number" placeholder="Enter your first number" id="num1">
+        <br>
+        <br>
+        <label>Second number:</label>
+        <input type="number" placeholder="Enter your second number" id="num2">
+        <br><br>
+        <button id="add">+</button>
+        <button id="sub">-</button>
+        <button id="mul">*</button>
+        <button id="div">%</button>
+    </div>
+
+</body>
+<script>
+    let first=document.getElementById("num1");
+    let second=document.getElementById("num2");
+
+    let addNumber=document.getElementById("add");
+    let subNumber=document.getElementById("sub");
+    let mulNumber=document.getElementById("mul");
+    let divNumber=document.getElementById("div");
+    let finalResult=document.getElementById("finalResult");
+
+   
+
+
+    addNumber.addEventListener('click',()=>{
+            let result1=parseInt(first.value);
+            let result2=parseInt(second.value);
+            let count=result1+result2;
+            finalResult.innerText=count;
+    });
+
+    subNumber.addEventListener('click', () => {
+        let result1 = parseInt(first.value);
+        let result2 = parseInt(second.value);
+        let count = result1 - result2;
+        finalResult.innerText = count;
+    });
+
+    mulNumber.addEventListener('click',()=>{
+        let result1=parseInt(first.value);
+        let result2=parseInt(second.value);
+        let count=result1*result2;
+        finalResult.innerText=count
+    });
+
+    divNumber.addEventListener('click',()=>{
+        let result1=parseInt(first.value);
+        let result2=parseInt(second.value);
+             if (result2 < result1) {
+            let count = result1 / result2;  
+            finalResult.innerText = count;
+            }else {
+                alert("Give second number must be less than first number");
+            }
+        });
+
+    
+</script>
+</html>
