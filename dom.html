@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Todo App</h2>
+    <input type="text" id="task">
+    <button onclick="addTask()">Add</button>
+    <ul id="list"></ul>
+
+</body>
+<script>
+    function addTask(){
+        let taskInput=document.getElementById("task");
+        let task=taskInput.value
+
+        if(task===''){
+            return;
+        }
+        let li=document.createElement("li");
+        li.innerText=task;
+        
+        let btn=document.createElement("button");
+        btn.innerText="Delete";
+ 
+
+        btn.onclick=function(){
+            li.remove();
+
+        };
+        li.appendChild(btn);
+
+        document.getElementById("list").appendChild(li);
+
+        taskInput.value="";
+
+    }
+</script>
+</html>

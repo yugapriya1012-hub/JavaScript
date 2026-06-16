@@ -1,0 +1,87 @@
+
+<!--innerText-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head"></h1>
+</body>
+<script>
+    document.getElementById("head").innerText="WELCOME"
+</script>
+</html> -->
+
+<!--innerHTML-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="head"></div>
+</body>
+<script>
+    document.getElementById("head").innerHTML="<p>Hello!</p>"
+</script>
+</html>  -->
+
+<!--value-->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="value">
+<p id="result"></p>
+</body>
+<script>
+    let text=document.getElementById("value");
+    let output=document.getElementById("result")
+
+    text.addEventListener("input",function(){
+        output.textContent=text.value
+    })
+</script>
+</html> -->
+
+<!--What's app message mini task-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Message Box</h1>
+    <input type="text" id="user" placeholder="Type your message">
+    <button onclick="clearMessage()">Clear</button>
+    <h4>Preview : </h4>
+    <p id="para"></p>
+</body>
+<script>
+    let input=document.getElementById("user");
+    let output=document.getElementById("para");
+
+    input.addEventListener("input",function(){
+        output.innerText=input.value;
+    })
+
+    function clearMessage(){
+        input.value="";
+        output.innerText="";
+    }
+</script>
+</html> -->
