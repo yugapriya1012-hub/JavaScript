@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        const url =
+            'https://restcountries.com/v3.1/all?fields=name,capital,population,languages,region,area,continents,unMember';
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result);
+
+                // Display all the capitals of the countries
+                console.log(result.map((country)=>{
+                    let myCapital=country.capital;
+                    return myCapital
+                }))
+                // filter the names
+                var countryNames = result.map((country) => country.name);
+                console.log(countryNames);
+                // Display all countries that are not UN members.
+                console.log(result.filter((el)=>{
+                    return el.unMember==false
+                }));
+                // Display the countries that are in Asia
+                console.log(result.filter((country)=>{
+                    return country.region=="Asia";
+                }))
+                // Display the countries that have population greater than 10 million
+                console.log(result.filter((eachCountry)=>{
+                    return eachCountry.population>10000000*10;
+                }))
+                // Display the countries official Names along with their capitals alone from the response
+                // Find the Total Population of All Countries
+                console.log( result.reduce((sum, country) => {
+                    return sum + country.population;
+                    }, 0));
+                
+                // Count how many countries belong to each region
+                // Display countries that have more than one capital
+                console.log(result.filter((eachCountry)=>{
+                    let length= eachCountry.capital.length;
+                    return length>1;
+                }));
+                // Display countries that are UN members and that are in Asia
+                console.log(
+                    result.filter((eachCountry) =>{
+                    return (
+                        eachCountry.unMember==true &
+                        eachCountry.region=="Asia"
+                    );
+                }));
+                // Find the country with the lowest area
+                var smallestCountry = result.reduce((min, country) => {
+                return country.area < min.area ? country : min;
+                });
+                console.log(
+                `Country with lowest area: ${smallestCountry.name.common} (${smallestCountry.area} km²)`,
+                );
+                // Display countries that are NOT UN members and are in Europe
+
+                var result = result.filter(
+                (country) =>
+                    country.unMember === false && country.region === "Europe",
+                );
+                result.forEach((country) => {
+                console.log(country.name.common);
+                });
+                // Display country name and area for each country
+
+                
+                // Display country name along with number of languages spoken
+                //Swap the value
+                let data={
+                    india:"Delhi",
+                    japan:"Tokyo",
+                }
+                //option 1
+                let output={};
+                for(let key of Object.keys(data)){
+                    let country=key;
+                    let capital=data[key];
+                    output[capital]=country;
+
+                }
+                console.log(output);
+            });
+            //option 2
+
+            
+
+            
+        
+    </script>
+</html>

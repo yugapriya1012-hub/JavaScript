@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the number" id="myinput"></input>
+    <br><br>
+    <button id="Btn">Start</button>
+    <br>
+    <br>
+    <div id="box"></div>
+</body>
+<script>
+
+    let myBtn=document.getElementById("Btn");
+    let InputBox=document.getElementById("myinput");
+    let timeBox=document.getElementById("box");
+    myBtn.addEventListener("click",()=>{
+
+    //set Interval
+        var action="stop";
+        let count=InputBox.value;
+        let timer=1000;
+        timeBox.textContent=count
+        let end=setInterval(()=>{
+            if (count==0){
+                alert("timeOut")
+                clearInterval(end)
+            }
+            count--
+            timeBox.textContent=count
+            
+              
+    
+},timer);
+});
+</script>
+</html>

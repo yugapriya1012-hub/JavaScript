@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" novalidate>
+  <input type="email" id="email" required>
+  <span id="emailError"></span>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const form = document.getElementById("myForm");
+  const email = document.getElementById("email");
+  const emailError = document.getElementById("emailError");
+
+  form.addEventListener("submit", function(event) {
+    if (!email.validity.valid) {
+      if (email.validity.valueMissing) {
+        emailError.textContent = "Email is required!";
+      } else if (email.validity.typeMismatch) {
+        emailError.textContent = "Please enter a valid email address!";
+      }
+      event.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>

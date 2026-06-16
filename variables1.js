@@ -17,3 +17,4 @@
 // const country='India'
 // console.log(country)
 
+git remote -v
